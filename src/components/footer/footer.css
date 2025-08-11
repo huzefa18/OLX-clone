@@ -1,0 +1,75 @@
+:root {
+  --olx-green: #002f34;
+  --olx-blue: #3a77ff;
+  --olx-gray: #f6f7f9;
+}
+
+.cta-band {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 24px 0;
+}
+.cta-title {
+  color: var(--olx-green);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0;
+}
+.cta-link {
+  color: var(--olx-blue);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0;
+}
+.cta-phone {
+  max-height: 160px;
+  object-fit: contain;
+}
+.store-badge {
+  height: 44px;
+}
+
+.links-band {
+  background: var(--olx-gray);
+  padding: 56px 0;
+}
+.f-h {
+  color: var(--olx-green);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.f-h-img:hover{
+  color: #aaa3a3;
+  border: 1px solid aaa3a3;
+}
+.f-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.f-link {
+  color: var(--olx-green);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 28px;
+}
+.f-link:hover {
+  color: #aaa3a3;
+}
+
+.bottom-bar {
+  background: var(--olx-green);
+  padding: 12px 0;
+}
+.back-btn {
+  border: 1px solid #b9c4c8;
+  position: fixed;
+  background: #fff;
+  color: var(--olx-green);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+}
