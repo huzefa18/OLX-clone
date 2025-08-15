@@ -1,13 +1,15 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import listings from "../../listing";
-import love from "/home/dev/Desktop/olx-clone/src/assets/love.svg";
+import love from "/home/dev/Desktop/olx-clone/frontend/src/assets/love.svg";
 import { useLocationFilter } from "../context/context";
 import categories from "../data";
+import { useProducts} from "../context/ContextProducts";
 
-function CardHolder({ keyy, cut = 4, showAll = false }) {
+function CardHolder({ keyy, cut = 4, name,showAll = false }) {
   const { location: selected } = useLocationFilter();
-
+    const {products:listings}=useProducts();
+    console.log(`listings:${listings}`)
+    console.log(`keys:${Object.keys(listings)}`)
   let items = listings[keyy] || [];
 
   if (selected && selected !== "Pakistan") {
@@ -19,7 +21,7 @@ function CardHolder({ keyy, cut = 4, showAll = false }) {
   }
 
   const categoryData =
-    categories.find((cat) => cat.key === keyy) || { name: keyy, href: `/category/${keyy}` };
+    categories.find((cat) => cat._id === keyy) || { name: keyy, href: `/category/${keyy}` };
 
   const mdCols = showAll ? 4 : 3;
 
@@ -27,7 +29,7 @@ function CardHolder({ keyy, cut = 4, showAll = false }) {
     <div className="py-5">
       <Container>
         <div className="d-flex align-items-center mb-3">
-          <h2 className="mb-0" style={{ flexGrow: 1 }}>{categoryData.name}</h2>
+          <h2 className="mb-0" style={{ flexGrow: 1 }}>{name}</h2>
           <Link to={categoryData.href} style={{ textDecoration: "none", color: "inherit" }}>
             <h6 style={{ color: "blue" }}>View More</h6>
           </Link>
