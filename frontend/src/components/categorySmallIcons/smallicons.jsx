@@ -1,23 +1,27 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
-import category from '../data';
 import { useNavigate } from 'react-router-dom';
+import { useCategories } from '../context/contextCategories';
 function SmallIcons()
 {
+  const {categories:category}=useCategories();
+  
   const navigate=useNavigate();
   function handleOnClick(keyy)
   {
     const categoryKey=keyy
-    {console.log(categoryKey)}
+    {console.log(`category key is :${categoryKey}`)}
     navigate(`/category/${categoryKey}`)
   }
+  
     return (
         <Container className='py-5 '>
             <Row>
                  {category.map((c) => (
           <Col key={c.name} xs={4} sm={4} md={2} lg={2} xxl={2} className='py-1'>
-              <Card className="border-0 text-center category-card h-100 "  onClick={()=>handleOnClick(c.key)} >
+              <Card className="border-0 text-center category-card h-100 "  onClick={()=>handleOnClick(c._id)} >
+                {console.log(`c,_id is :${c._id}`)}
                 <div className="p-2">
                   <div className=" rounded-3 d-flex align-items-center justify-content-center mb-2" style={{backgroundColor:'ebf1ff'}}>
                     <img
