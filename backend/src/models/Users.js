@@ -8,11 +8,6 @@ const userSchema=new moongoose.Schema({
         required:true,
         unique:true
     },
-    contact:{
-        type:Number,
-        required:true,
-        minlength:11
-    },
     password:{
         type:String,
         required:true,
