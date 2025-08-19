@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const User = require('../models/Users');
 const { signAccessToken, signRefreshToken } = require('../utils/tokens');
 
 const refreshCookieToken = {
   httpOnly: true,
   secure: false,             
-  sameSite: 'strict',       
+  sameSite: 'lax',       
   path: '/api/auth/refresh',
   maxAge: 7 * 24 * 60 * 60 * 1000,
 };
@@ -13,7 +13,7 @@ const refreshCookieToken = {
 exports.signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
-
+        console.log(name,email,password)
     const flag = await User.findOne({ email });           
     if (flag) return res.status(409).json({
       status: 'fail',
@@ -43,8 +43,8 @@ exports.signup = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
-
-    const user = await User.findOne({ email }).select('+password'); 
+    console.log(email,password)
+    const user = await User.findOne({ email }).select("+password");; 
     if (!user) return res.status(401).json({
       status: 'fail',
       msg: 'user not found',

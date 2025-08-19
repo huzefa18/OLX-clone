@@ -1,35 +1,36 @@
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt'); 
 
-const mongoose=require(mongoose)
-const bycrpt=require(bycrpt)
-const modile=require(module)
-const userSchema=new moongoose.Schema({
-    name: {type:String ,required:true, trim:true},
-    email:{type:String ,
-        required:true,
-        unique:true
+const userSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true, trim: true },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
     },
-    password:{
-        type:String,
-        required:true,
-        minlength: 6
-        
+    password: {
+      type: String,
+      required: true,
+      minlength: 6,
+      select: false,
     },
-      tokenVersion: { type: Number, default: 0 },
+    tokenVersion: { type: Number, default: 0 },
+  },
+  { timestamps: true }
+);
+
+userSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) return next(); 
+  const salt = await bcrypt.genSalt(10);         
+  this.password = await bcrypt.hash(this.password, salt); 
+  next();
 });
-userSchema.pre('save',async function (next)
-{
-    if(!this.isModified)return next();
-    const salt=await bycrpt.salt(10);
-    const hash=await bycrpt.hash(this.password,salt);
 
-    next();
-})
+userSchema.methods.comparePassword = function (plain) {
+  return bcrypt.compare(plain, this.password); 
+};
 
-userSchema.methods.comparePassword=function (txt)
-{
-    return bycrpt.compare(this.password,txt);
-}
-
-
-module.exports=moongoose.model('User',userSchema);
-
+module.exports = mongoose.model('User', userSchema);
