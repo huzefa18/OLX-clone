@@ -14,6 +14,8 @@ function Nav1()
 {
   const goProperty = () => navigate("/category/houses");
   const goMotors=()=> navigate('/category/cars')
+  const goLogin=()=>navigate('/login')
+  const goSignup=()=>navigate('/signup')
    const navigate = useNavigate();
   const {location: selected,setLocation}=useLocationFilter();
   const handleSelect=(loc)=>
@@ -55,7 +57,8 @@ function Nav1()
           </div>
 
           <div className="d-none d-md-flex align-items-center gap-3">
-            <button className="login-link-btn">Login</button>
+            <button className="login-link-btn" onClick={goLogin}>Login</button>
+            <button className="login-link-btn" onClick={goSignup}>Signup</button>
             <div className="sell-button-wrapper">
               <button className="sell-button-inner">
                 <span className="me-1">+</span> SELL
