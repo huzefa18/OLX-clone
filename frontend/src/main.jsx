@@ -6,9 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 import LocationProvider from './components/context/context.jsx';
 import { CategoryProvider } from './components/context/CategoryProvider.jsx';
 import { ProductProvider } from './components/context/ProductProvider.jsx';
+import { AuthProvider } from './auth/AuthContext.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <ProductProvider>
+      <AuthProvider>
+
 
 <CategoryProvider>
 
@@ -16,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </LocationProvider>
 </CategoryProvider>
+      </AuthProvider>
     </ProductProvider>
     
   </BrowserRouter>
