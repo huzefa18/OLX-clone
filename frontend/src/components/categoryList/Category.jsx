@@ -1,11 +1,24 @@
 import { ListGroup, Container } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useNavigate } from 'react-router-dom';
-import { useCategories } from '../context/contextCategories';
+// import { useCategories } from '../context/contextCategories';
+import { useDispatch,useSelector } from 'react-redux';
 import './Category.css';
+import { fetchCategories } from '../../../store/categories/CategorySlice';
+import { useEffect } from 'react';
+// import categories from '../data';
 
 function CategoryList() {
-  const { categories: data = [] } = useCategories();
+  const dispatch=useDispatch();
+  const {list,status,error}=useSelector((s)=>s.categories);
+  // console.log(status);
+    useEffect(() => {
+      // console.log('fetching data')
+  dispatch(fetchCategories());   // one call on mount
+}, [dispatch]);
+// console.log(`list:${list}`)
+    const data=list;
+    // console.log(list)
   const navigate = useNavigate();
 
   const go = (cat) => {

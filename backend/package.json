@@ -9,13 +9,15 @@
     "seed": "node src/seed/seed.js"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.17.1"
+    "mongoose": "^8.17.1",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

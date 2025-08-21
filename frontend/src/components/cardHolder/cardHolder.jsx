@@ -3,14 +3,27 @@ import { Link } from "react-router-dom";
 import love from "/home/dev/Desktop/olx-clone/frontend/src/assets/love.svg";
 import { useLocationFilter } from "../context/context";
 import categories from "../data";
-import { useProducts} from "../context/ContextProducts";
+// import { useProducts} from "../context/ContextProducts";
+import { useSelector,useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchProducts,selectProducts } from "../../../store/products/ProductsSlice";
+
 
 function CardHolder({ keyy, cut = 4, name,showAll = false }) {
   const { location: selected } = useLocationFilter();
-    const {products:listings}=useProducts();
-    console.log(`listings:${listings}`)
-    console.log(`keys:${Object.keys(listings)}`)
+  const dispatch = useDispatch();
+  const listings=useSelector(selectProducts);
+
+  
+  useEffect(()=>
+  {
+   
+      dispatch(fetchProducts())
+
+
+  },[dispatch]);
   let items = listings[keyy] || [];
+
 
   if (selected && selected !== "Pakistan") {
     items = items.filter((obj) => obj.location === selected);
