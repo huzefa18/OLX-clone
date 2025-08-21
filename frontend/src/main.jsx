@@ -4,23 +4,26 @@ import App from './App.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import LocationProvider from './components/context/context.jsx';
-import { CategoryProvider } from './components/context/CategoryProvider.jsx';
-import { ProductProvider } from './components/context/ProductProvider.jsx';
+import store from '../store/store.js';
+import { Provider } from "react-redux";
+// import { CategoryProvider } from './components/context/CategoryProvider.jsx';
+// import { ProductProvider } from './components/context/ProductProvider.jsx';
 import { AuthProvider } from './auth/AuthContext.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
-    <ProductProvider>
-      <AuthProvider>
+\      <AuthProvider>
 
 
-<CategoryProvider>
+{/* <CategoryProvider> */}
+  <Provider store={store}>
+
 
   <LocationProvider>
     <App />
   </LocationProvider>
-</CategoryProvider>
+  </Provider>
+{/* </CategoryProvider> */}
       </AuthProvider>
-    </ProductProvider>
     
   </BrowserRouter>
 );

@@ -22,7 +22,7 @@ api.interceptors.response.use(
         original._retry=true;
          if (err.response?.status === 401 && !original._retry)
         {try{
-            refreshPromise=refreshPromise || api.post('/api/uth/refresh');
+            refreshPromise=refreshPromise || api.post('/api/auth/refresh');
             const {data}=refreshPromise;
             refreshPromise=null;
             setAccessToken(data.accessToken);

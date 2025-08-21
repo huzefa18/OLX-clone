@@ -3,14 +3,25 @@ import CardHolder from "../components/cardHolder/cardHolder";
 import BackToTop from "../components/backToTop/backToTop";
 import { Container ,Row,Col,Badge} from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
-import rightArrow from '/home/dev/Desktop/olx-clone/frontend/src/assets/rightArrow.svg'
+import rightArrow from '../assets/rightArrow.svg'
 import { useNavigate } from "react-router-dom";
-import { useCategories } from "../components/context/contextCategories";
+import { useSelector,useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchCategories } from "../../store/categories/CategorySlice";
+// import categories from "../components/data";
 function Category()
 {
+    const dispatch=useDispatch();
+    const {list,status}=useSelector((s)=>s.categories)
+    useEffect(()=>
+    {
+        if(status==='idle')
+        {
+            dispatch(fetchCategories());
+        }
+    },[dispatch,status])
     const navigate=useNavigate();
-    const {categories:category}=useCategories();
-
+    const category=list;
     
     const {categoryKey}=useParams();
     let n=category.find(obj =>obj._id===categoryKey);
@@ -19,7 +30,7 @@ function Category()
         navigate(`/categories/${categoryKey}`)
         
     }
-    {console.log(`category page loaded`)}
+
 
     return(
         <div style={{backgroundColor:"transparent"}}>
