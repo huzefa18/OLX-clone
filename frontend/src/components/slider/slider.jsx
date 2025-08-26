@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import Carousel from 'react-bootstrap/Carousel';
-import slide from '/home/dev/Desktop/olx-clone/frontend/src/assets/slider.webp'
+import slide from '../../assets/slider.webp'
 function Slider()
 {
     return(
