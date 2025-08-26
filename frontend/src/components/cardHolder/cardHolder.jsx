@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import love from "/home/dev/Desktop/olx-clone/frontend/src/assets/love.svg";
+import love from "../../assets/love.svg";
 import { useLocationFilter } from "../context/context";
 import categories from "../data";
 // import { useProducts} from "../context/ContextProducts";
