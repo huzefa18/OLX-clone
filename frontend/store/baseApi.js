@@ -1,4 +1,4 @@
-export const API_BASE='http://localhost:8080';
+export const API_BASE='https://olx-clone-mp2r.onrender.com';
 export async function GetJSON(url)
 {
     const response=await fetch(url);
