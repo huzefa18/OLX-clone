@@ -6,15 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 import LocationProvider from './components/context/context.jsx';
 import store from '../store/store.js';
 import { Provider } from "react-redux";
-// import { CategoryProvider } from './components/context/CategoryProvider.jsx';
-// import { ProductProvider } from './components/context/ProductProvider.jsx';
 import { AuthProvider } from './auth/AuthContext.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
-\      <AuthProvider>
+     <AuthProvider>
 
 
-{/* <CategoryProvider> */}
   <Provider store={store}>
 
 
@@ -22,7 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </LocationProvider>
   </Provider>
-{/* </CategoryProvider> */}
       </AuthProvider>
     
   </BrowserRouter>
