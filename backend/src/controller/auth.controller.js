@@ -32,6 +32,7 @@ exports.signup = async (req, res) => {
           name: user.name,
           id: user._id,
           email: user.email,
+          likedProducts: user.likedProducts || [],
         },
         accessToken,
       });
@@ -68,6 +69,7 @@ exports.login = async (req, res) => {
           id: user._id,
           name: user.name,
           email: user.email,
+          likedProducts: user.likedProducts || [],
         },
         accessToken,
       });
@@ -100,6 +102,7 @@ exports.refresh = async (req, res) => {
           id: user._id,
           name: user.name,
           email: user.email,
+          likedProducts: user.likedProducts || [],
         },
         accessToken: newAccessToken,
       });
@@ -109,7 +112,7 @@ exports.refresh = async (req, res) => {
 };
 
 exports.profile = async (req, res) => {
-  const user = await User.findById(req.user.id).select('_id name email ');
+  const user = await User.findById(req.user.id).select('_id name email likedProducts');
   if (!user) return res.status(404).json({ status: 'fail', msg: 'User not found' });
   return res.json({ status: 'success', data: user });
 };

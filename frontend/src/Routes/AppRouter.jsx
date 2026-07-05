@@ -9,7 +9,9 @@ import ProtectedRoute from "../auth/ProtectedRoute";
 import Login from "../pages/login";
 import Profile from "../pages/profile";
 import Signup from "../pages/signup";
-// import Foter from "../components/footer/footer";
+import ProductDetail from "../pages/productDetail";
+import Favorites from "../pages/favorites";
+
 function AppRouter()
 {
     return (
@@ -26,6 +28,14 @@ function AppRouter()
 
                 <ProtectedRoute>
                     <Profile/>
+                </ProtectedRoute>
+            }
+                />
+            <Route path="/product/:productId" element={<ProductDetail />} />
+            <Route path="/favorites" 
+            element={
+                <ProtectedRoute>
+                    <Favorites/>
                 </ProtectedRoute>
             }
                 />

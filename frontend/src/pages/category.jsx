@@ -25,6 +25,11 @@ function Category()
     
     const {categoryKey}=useParams();
     let n=category.find(obj =>obj._id===categoryKey);
+    
+    if (status === 'loading' || !n) {
+        return <div className="text-center mt-5">Loading Category...</div>;
+    }
+
     function handleClick(categoryKey)
     {
         navigate(`/categories/${categoryKey}`)

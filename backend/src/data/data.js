@@ -1,15 +1,15 @@
 const car_img = "https://i.postimg.cc/0KJSPj72/car.png";
 const book_img = "https://i.postimg.cc/47yt2Bdc/book.png";
 const mobiles_img = "https://i.postimg.cc/8srfFFrT/mobiles.png";
-const animal_img = "https://i.postimg.cc/FfD3x29m/animal.png";
-const home_img = "https://i.postimg.cc/K15MZd3L/home.png";
+const animal_img = "https://img.icons8.com/plasticine/200/dog.png";
+const home_img = "https://img.icons8.com/plasticine/200/home.png";
 const motorcycle_img = "https://i.postimg.cc/T5mKBSXK/motorcycle.png";
 const clothing_img = "https://i.postimg.cc/fk3mx21n/clothing.png";
 
 const listings = {
   "mobile-phones": [
     {
-            "id": "mobile-phones-1",
+      "id": "mobile-phones-1",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 1",
       "price": "Rs 49160",
@@ -19,7 +19,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-2",
+      "id": "mobile-phones-2",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 2",
       "price": "Rs 15267",
@@ -29,7 +29,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-3",
+      "id": "mobile-phones-3",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 3",
       "price": "Rs 25776",
@@ -39,7 +39,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-4",
+      "id": "mobile-phones-4",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 4",
       "price": "Rs 61423",
@@ -49,7 +49,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-5",
+      "id": "mobile-phones-5",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 5",
       "price": "Rs 9116",
@@ -59,7 +59,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-6",
+      "id": "mobile-phones-6",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 6",
       "price": "Rs 24284",
@@ -69,7 +69,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-7",
+      "id": "mobile-phones-7",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 7",
       "price": "Rs 59962",
@@ -79,7 +79,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-8",
+      "id": "mobile-phones-8",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 8",
       "price": "Rs 49712",
@@ -89,7 +89,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-9",
+      "id": "mobile-phones-9",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 9",
       "price": "Rs 76979",
@@ -99,7 +99,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-10",
+      "id": "mobile-phones-10",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 10",
       "price": "Rs 60102",
@@ -109,7 +109,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-11",
+      "id": "mobile-phones-11",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 11",
       "price": "Rs 56702",
@@ -119,7 +119,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-12",
+      "id": "mobile-phones-12",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 12",
       "price": "Rs 29807",
@@ -129,7 +129,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-13",
+      "id": "mobile-phones-13",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 13",
       "price": "Rs 100916",
@@ -139,7 +139,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-14",
+      "id": "mobile-phones-14",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 14",
       "price": "Rs 46468",
@@ -149,7 +149,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-15",
+      "id": "mobile-phones-15",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 15",
       "price": "Rs 18300",
@@ -159,7 +159,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-16",
+      "id": "mobile-phones-16",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 16",
       "price": "Rs 101543",
@@ -169,7 +169,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-17",
+      "id": "mobile-phones-17",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 17",
       "price": "Rs 96034",
@@ -179,7 +179,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-18",
+      "id": "mobile-phones-18",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 18",
       "price": "Rs 56995",
@@ -189,7 +189,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-19",
+      "id": "mobile-phones-19",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 19",
       "price": "Rs 95303",
@@ -199,7 +199,7 @@ const listings = {
       "href": "/category/mobile-phones"
     },
     {
-            "id": "mobile-phones-20",
+      "id": "mobile-phones-20",
       "name": "Mobile Phones",
       "title": "Mobile Phone Item 20",
       "price": "Rs 72936",
@@ -211,7 +211,7 @@ const listings = {
   ],
   "cars": [
     {
-            "id": "cars-1",
+      "id": "cars-1",
       "name": "Cars",
       "title": "Car Item 1",
       "price": "Rs 43572",
@@ -221,7 +221,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-2",
+      "id": "cars-2",
       "name": "Cars",
       "title": "Car Item 2",
       "price": "Rs 94787",
@@ -231,7 +231,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-3",
+      "id": "cars-3",
       "name": "Cars",
       "title": "Car Item 3",
       "price": "Rs 53367",
@@ -241,7 +241,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-4",
+      "id": "cars-4",
       "name": "Cars",
       "title": "Car Item 4",
       "price": "Rs 60091",
@@ -251,7 +251,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-5",
+      "id": "cars-5",
       "name": "Cars",
       "title": "Car Item 5",
       "price": "Rs 39193",
@@ -261,7 +261,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-6",
+      "id": "cars-6",
       "name": "Cars",
       "title": "Car Item 6",
       "price": "Rs 89277",
@@ -271,7 +271,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-7",
+      "id": "cars-7",
       "name": "Cars",
       "title": "Car Item 7",
       "price": "Rs 88468",
@@ -281,7 +281,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-8",
+      "id": "cars-8",
       "name": "Cars",
       "title": "Car Item 8",
       "price": "Rs 102307",
@@ -291,7 +291,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-9",
+      "id": "cars-9",
       "name": "Cars",
       "title": "Car Item 9",
       "price": "Rs 48078",
@@ -301,7 +301,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-10",
+      "id": "cars-10",
       "name": "Cars",
       "title": "Car Item 10",
       "price": "Rs 81796",
@@ -311,7 +311,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-11",
+      "id": "cars-11",
       "name": "Cars",
       "title": "Car Item 11",
       "price": "Rs 74401",
@@ -321,7 +321,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-12",
+      "id": "cars-12",
       "name": "Cars",
       "title": "Car Item 12",
       "price": "Rs 99674",
@@ -331,7 +331,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-13",
+      "id": "cars-13",
       "name": "Cars",
       "title": "Car Item 13",
       "price": "Rs 88405",
@@ -341,7 +341,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-14",
+      "id": "cars-14",
       "name": "Cars",
       "title": "Car Item 14",
       "price": "Rs 24016",
@@ -351,7 +351,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-15",
+      "id": "cars-15",
       "name": "Cars",
       "title": "Car Item 15",
       "price": "Rs 37870",
@@ -361,7 +361,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-16",
+      "id": "cars-16",
       "name": "Cars",
       "title": "Car Item 16",
       "price": "Rs 56550",
@@ -371,7 +371,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-17",
+      "id": "cars-17",
       "name": "Cars",
       "title": "Car Item 17",
       "price": "Rs 13430",
@@ -381,7 +381,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-18",
+      "id": "cars-18",
       "name": "Cars",
       "title": "Car Item 18",
       "price": "Rs 21639",
@@ -391,7 +391,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-19",
+      "id": "cars-19",
       "name": "Cars",
       "title": "Car Item 19",
       "price": "Rs 5256",
@@ -401,7 +401,7 @@ const listings = {
       "href": "/category/cars"
     },
     {
-            "id": "cars-20",
+      "id": "cars-20",
       "name": "Cars",
       "title": "Car Item 20",
       "price": "Rs 90731",
@@ -413,7 +413,7 @@ const listings = {
   ],
   "motorcycles": [
     {
-            "id": "motorcycles-1",
+      "id": "motorcycles-1",
       "name": "Motorcycles",
       "title": "Motorcycle Item 1",
       "price": "Rs 24426",
@@ -423,7 +423,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-2",
+      "id": "motorcycles-2",
       "name": "Motorcycles",
       "title": "Motorcycle Item 2",
       "price": "Rs 65508",
@@ -433,7 +433,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-3",
+      "id": "motorcycles-3",
       "name": "Motorcycles",
       "title": "Motorcycle Item 3",
       "price": "Rs 43401",
@@ -443,7 +443,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-4",
+      "id": "motorcycles-4",
       "name": "Motorcycles",
       "title": "Motorcycle Item 4",
       "price": "Rs 75957",
@@ -453,7 +453,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-5",
+      "id": "motorcycles-5",
       "name": "Motorcycles",
       "title": "Motorcycle Item 5",
       "price": "Rs 7193",
@@ -463,7 +463,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-6",
+      "id": "motorcycles-6",
       "name": "Motorcycles",
       "title": "Motorcycle Item 6",
       "price": "Rs 59615",
@@ -473,7 +473,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-7",
+      "id": "motorcycles-7",
       "name": "Motorcycles",
       "title": "Motorcycle Item 7",
       "price": "Rs 21982",
@@ -483,7 +483,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-8",
+      "id": "motorcycles-8",
       "name": "Motorcycles",
       "title": "Motorcycle Item 8",
       "price": "Rs 77538",
@@ -493,7 +493,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-9",
+      "id": "motorcycles-9",
       "name": "Motorcycles",
       "title": "Motorcycle Item 9",
       "price": "Rs 65635",
@@ -503,7 +503,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-10",
+      "id": "motorcycles-10",
       "name": "Motorcycles",
       "title": "Motorcycle Item 10",
       "price": "Rs 29157",
@@ -513,7 +513,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-11",
+      "id": "motorcycles-11",
       "name": "Motorcycles",
       "title": "Motorcycle Item 11",
       "price": "Rs 95930",
@@ -523,7 +523,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-12",
+      "id": "motorcycles-12",
       "name": "Motorcycles",
       "title": "Motorcycle Item 12",
       "price": "Rs 75967",
@@ -533,7 +533,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-13",
+      "id": "motorcycles-13",
       "name": "Motorcycles",
       "title": "Motorcycle Item 13",
       "price": "Rs 77370",
@@ -543,7 +543,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-14",
+      "id": "motorcycles-14",
       "name": "Motorcycles",
       "title": "Motorcycle Item 14",
       "price": "Rs 72956",
@@ -553,7 +553,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-15",
+      "id": "motorcycles-15",
       "name": "Motorcycles",
       "title": "Motorcycle Item 15",
       "price": "Rs 52120",
@@ -563,7 +563,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-16",
+      "id": "motorcycles-16",
       "name": "Motorcycles",
       "title": "Motorcycle Item 16",
       "price": "Rs 86748",
@@ -573,7 +573,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-17",
+      "id": "motorcycles-17",
       "name": "Motorcycles",
       "title": "Motorcycle Item 17",
       "price": "Rs 43789",
@@ -583,7 +583,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-18",
+      "id": "motorcycles-18",
       "name": "Motorcycles",
       "title": "Motorcycle Item 18",
       "price": "Rs 57960",
@@ -593,7 +593,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-19",
+      "id": "motorcycles-19",
       "name": "Motorcycles",
       "title": "Motorcycle Item 19",
       "price": "Rs 23943",
@@ -603,7 +603,7 @@ const listings = {
       "href": "/category/motorcycles"
     },
     {
-            "id": "motorcycles-20",
+      "id": "motorcycles-20",
       "name": "Motorcycles",
       "title": "Motorcycle Item 20",
       "price": "Rs 80624",
@@ -615,7 +615,7 @@ const listings = {
   ],
   "houses": [
     {
-            "id": "houses-1",
+      "id": "houses-1",
       "name": "Houses",
       "title": "House Item 1",
       "price": "Rs 51707",
@@ -625,7 +625,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-2",
+      "id": "houses-2",
       "name": "Houses",
       "title": "House Item 2",
       "price": "Rs 79801",
@@ -635,7 +635,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-3",
+      "id": "houses-3",
       "name": "Houses",
       "title": "House Item 3",
       "price": "Rs 82141",
@@ -645,7 +645,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-4",
+      "id": "houses-4",
       "name": "Houses",
       "title": "House Item 4",
       "price": "Rs 38349",
@@ -655,7 +655,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-5",
+      "id": "houses-5",
       "name": "Houses",
       "title": "House Item 5",
       "price": "Rs 34649",
@@ -665,7 +665,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-6",
+      "id": "houses-6",
       "name": "Houses",
       "title": "House Item 6",
       "price": "Rs 71442",
@@ -675,7 +675,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-7",
+      "id": "houses-7",
       "name": "Houses",
       "title": "House Item 7",
       "price": "Rs 60044",
@@ -685,7 +685,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-8",
+      "id": "houses-8",
       "name": "Houses",
       "title": "House Item 8",
       "price": "Rs 84274",
@@ -695,7 +695,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-9",
+      "id": "houses-9",
       "name": "Houses",
       "title": "House Item 9",
       "price": "Rs 31899",
@@ -705,7 +705,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-10",
+      "id": "houses-10",
       "name": "Houses",
       "title": "House Item 10",
       "price": "Rs 42073",
@@ -715,7 +715,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-11",
+      "id": "houses-11",
       "name": "Houses",
       "title": "House Item 11",
       "price": "Rs 32054",
@@ -725,7 +725,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-12",
+      "id": "houses-12",
       "name": "Houses",
       "title": "House Item 12",
       "price": "Rs 30020",
@@ -735,7 +735,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-13",
+      "id": "houses-13",
       "name": "Houses",
       "title": "House Item 13",
       "price": "Rs 69411",
@@ -745,7 +745,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-14",
+      "id": "houses-14",
       "name": "Houses",
       "title": "House Item 14",
       "price": "Rs 83236",
@@ -755,7 +755,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-15",
+      "id": "houses-15",
       "name": "Houses",
       "title": "House Item 15",
       "price": "Rs 93639",
@@ -765,7 +765,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-16",
+      "id": "houses-16",
       "name": "Houses",
       "title": "House Item 16",
       "price": "Rs 49357",
@@ -775,7 +775,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-17",
+      "id": "houses-17",
       "name": "Houses",
       "title": "House Item 17",
       "price": "Rs 51281",
@@ -785,7 +785,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-18",
+      "id": "houses-18",
       "name": "Houses",
       "title": "House Item 18",
       "price": "Rs 73372",
@@ -795,7 +795,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-19",
+      "id": "houses-19",
       "name": "Houses",
       "title": "House Item 19",
       "price": "Rs 61339",
@@ -805,7 +805,7 @@ const listings = {
       "href": "/category/houses"
     },
     {
-            "id": "houses-20",
+      "id": "houses-20",
       "name": "Houses",
       "title": "House Item 20",
       "price": "Rs 93939",
@@ -817,7 +817,7 @@ const listings = {
   ],
   "clothing": [
     {
-            "id": "clothing-1",
+      "id": "clothing-1",
       "name": "Clothing",
       "title": "Clothing Item 1",
       "price": "Rs 49172",
@@ -827,7 +827,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-2",
+      "id": "clothing-2",
       "name": "Clothing",
       "title": "Clothing Item 2",
       "price": "Rs 82339",
@@ -837,7 +837,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-3",
+      "id": "clothing-3",
       "name": "Clothing",
       "title": "Clothing Item 3",
       "price": "Rs 10528",
@@ -847,7 +847,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-4",
+      "id": "clothing-4",
       "name": "Clothing",
       "title": "Clothing Item 4",
       "price": "Rs 33558",
@@ -857,7 +857,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-5",
+      "id": "clothing-5",
       "name": "Clothing",
       "title": "Clothing Item 5",
       "price": "Rs 84394",
@@ -867,7 +867,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-6",
+      "id": "clothing-6",
       "name": "Clothing",
       "title": "Clothing Item 6",
       "price": "Rs 53203",
@@ -877,7 +877,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-7",
+      "id": "clothing-7",
       "name": "Clothing",
       "title": "Clothing Item 7",
       "price": "Rs 27392",
@@ -887,7 +887,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-8",
+      "id": "clothing-8",
       "name": "Clothing",
       "title": "Clothing Item 8",
       "price": "Rs 56813",
@@ -897,7 +897,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-9",
+      "id": "clothing-9",
       "name": "Clothing",
       "title": "Clothing Item 9",
       "price": "Rs 80339",
@@ -907,7 +907,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-10",
+      "id": "clothing-10",
       "name": "Clothing",
       "title": "Clothing Item 10",
       "price": "Rs 34148",
@@ -917,7 +917,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-11",
+      "id": "clothing-11",
       "name": "Clothing",
       "title": "Clothing Item 11",
       "price": "Rs 16099",
@@ -927,7 +927,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-12",
+      "id": "clothing-12",
       "name": "Clothing",
       "title": "Clothing Item 12",
       "price": "Rs 6593",
@@ -937,7 +937,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-13",
+      "id": "clothing-13",
       "name": "Clothing",
       "title": "Clothing Item 13",
       "price": "Rs 80027",
@@ -947,7 +947,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-14",
+      "id": "clothing-14",
       "name": "Clothing",
       "title": "Clothing Item 14",
       "price": "Rs 93287",
@@ -957,7 +957,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-15",
+      "id": "clothing-15",
       "name": "Clothing",
       "title": "Clothing Item 15",
       "price": "Rs 14233",
@@ -967,7 +967,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-16",
+      "id": "clothing-16",
       "name": "Clothing",
       "title": "Clothing Item 16",
       "price": "Rs 20471",
@@ -977,7 +977,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-17",
+      "id": "clothing-17",
       "name": "Clothing",
       "title": "Clothing Item 17",
       "price": "Rs 87083",
@@ -987,7 +987,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-18",
+      "id": "clothing-18",
       "name": "Clothing",
       "title": "Clothing Item 18",
       "price": "Rs 27341",
@@ -997,7 +997,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-19",
+      "id": "clothing-19",
       "name": "Clothing",
       "title": "Clothing Item 19",
       "price": "Rs 26916",
@@ -1007,7 +1007,7 @@ const listings = {
       "href": "/category/clothing"
     },
     {
-            "id": "clothing-20",
+      "id": "clothing-20",
       "name": "Clothing",
       "title": "Clothing Item 20",
       "price": "Rs 51089",
@@ -1019,7 +1019,7 @@ const listings = {
   ],
   "books": [
     {
-            "id": "books-1",
+      "id": "books-1",
       "name": "Books",
       "title": "Book Item 1",
       "price": "Rs 63334",
@@ -1029,7 +1029,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-2",
+      "id": "books-2",
       "name": "Books",
       "title": "Book Item 2",
       "price": "Rs 77450",
@@ -1039,7 +1039,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-3",
+      "id": "books-3",
       "name": "Books",
       "title": "Book Item 3",
       "price": "Rs 103447",
@@ -1049,7 +1049,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-4",
+      "id": "books-4",
       "name": "Books",
       "title": "Book Item 4",
       "price": "Rs 70249",
@@ -1059,7 +1059,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-5",
+      "id": "books-5",
       "name": "Books",
       "title": "Book Item 5",
       "price": "Rs 11764",
@@ -1069,7 +1069,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-6",
+      "id": "books-6",
       "name": "Books",
       "title": "Book Item 6",
       "price": "Rs 38250",
@@ -1079,7 +1079,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-7",
+      "id": "books-7",
       "name": "Books",
       "title": "Book Item 7",
       "price": "Rs 23273",
@@ -1089,7 +1089,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-8",
+      "id": "books-8",
       "name": "Books",
       "title": "Book Item 8",
       "price": "Rs 65875",
@@ -1099,7 +1099,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-9",
+      "id": "books-9",
       "name": "Books",
       "title": "Book Item 9",
       "price": "Rs 67825",
@@ -1109,7 +1109,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-10",
+      "id": "books-10",
       "name": "Books",
       "title": "Book Item 10",
       "price": "Rs 99978",
@@ -1119,7 +1119,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-11",
+      "id": "books-11",
       "name": "Books",
       "title": "Book Item 11",
       "price": "Rs 58071",
@@ -1129,7 +1129,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-12",
+      "id": "books-12",
       "name": "Books",
       "title": "Book Item 12",
       "price": "Rs 103334",
@@ -1139,7 +1139,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-13",
+      "id": "books-13",
       "name": "Books",
       "title": "Book Item 13",
       "price": "Rs 102192",
@@ -1149,7 +1149,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-14",
+      "id": "books-14",
       "name": "Books",
       "title": "Book Item 14",
       "price": "Rs 89764",
@@ -1159,7 +1159,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-15",
+      "id": "books-15",
       "name": "Books",
       "title": "Book Item 15",
       "price": "Rs 52720",
@@ -1169,7 +1169,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-16",
+      "id": "books-16",
       "name": "Books",
       "title": "Book Item 16",
       "price": "Rs 77497",
@@ -1179,7 +1179,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-17",
+      "id": "books-17",
       "name": "Books",
       "title": "Book Item 17",
       "price": "Rs 15571",
@@ -1189,7 +1189,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-18",
+      "id": "books-18",
       "name": "Books",
       "title": "Book Item 18",
       "price": "Rs 98598",
@@ -1199,7 +1199,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-19",
+      "id": "books-19",
       "name": "Books",
       "title": "Book Item 19",
       "price": "Rs 68371",
@@ -1209,7 +1209,7 @@ const listings = {
       "href": "/category/books"
     },
     {
-            "id": "books-20",
+      "id": "books-20",
       "name": "Books",
       "title": "Book Item 20",
       "price": "Rs 45349",
@@ -1221,7 +1221,7 @@ const listings = {
   ],
   "animals": [
     {
-            "id": "animals-1",
+      "id": "animals-1",
       "name": "Animals",
       "title": "Animal Item 1",
       "price": "Rs 63286",
@@ -1231,7 +1231,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-2",
+      "id": "animals-2",
       "name": "Animals",
       "title": "Animal Item 2",
       "price": "Rs 83466",
@@ -1241,7 +1241,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-3",
+      "id": "animals-3",
       "name": "Animals",
       "title": "Animal Item 3",
       "price": "Rs 28605",
@@ -1251,7 +1251,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-4",
+      "id": "animals-4",
       "name": "Animals",
       "title": "Animal Item 4",
       "price": "Rs 48450",
@@ -1261,7 +1261,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-5",
+      "id": "animals-5",
       "name": "Animals",
       "title": "Animal Item 5",
       "price": "Rs 84424",
@@ -1271,7 +1271,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-6",
+      "id": "animals-6",
       "name": "Animals",
       "title": "Animal Item 6",
       "price": "Rs 60889",
@@ -1281,7 +1281,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-7",
+      "id": "animals-7",
       "name": "Animals",
       "title": "Animal Item 7",
       "price": "Rs 82146",
@@ -1291,7 +1291,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-8",
+      "id": "animals-8",
       "name": "Animals",
       "title": "Animal Item 8",
       "price": "Rs 66452",
@@ -1301,7 +1301,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-9",
+      "id": "animals-9",
       "name": "Animals",
       "title": "Animal Item 9",
       "price": "Rs 9348",
@@ -1311,7 +1311,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-10",
+      "id": "animals-10",
       "name": "Animals",
       "title": "Animal Item 10",
       "price": "Rs 95740",
@@ -1321,7 +1321,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-11",
+      "id": "animals-11",
       "name": "Animals",
       "title": "Animal Item 11",
       "price": "Rs 7114",
@@ -1331,7 +1331,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-12",
+      "id": "animals-12",
       "name": "Animals",
       "title": "Animal Item 12",
       "price": "Rs 17622",
@@ -1341,7 +1341,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-13",
+      "id": "animals-13",
       "name": "Animals",
       "title": "Animal Item 13",
       "price": "Rs 75637",
@@ -1351,7 +1351,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-14",
+      "id": "animals-14",
       "name": "Animals",
       "title": "Animal Item 14",
       "price": "Rs 75343",
@@ -1361,7 +1361,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-15",
+      "id": "animals-15",
       "name": "Animals",
       "title": "Animal Item 15",
       "price": "Rs 91628",
@@ -1371,7 +1371,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-16",
+      "id": "animals-16",
       "name": "Animals",
       "title": "Animal Item 16",
       "price": "Rs 72951",
@@ -1381,7 +1381,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-17",
+      "id": "animals-17",
       "name": "Animals",
       "title": "Animal Item 17",
       "price": "Rs 36879",
@@ -1391,7 +1391,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-18",
+      "id": "animals-18",
       "name": "Animals",
       "title": "Animal Item 18",
       "price": "Rs 37487",
@@ -1401,7 +1401,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-19",
+      "id": "animals-19",
       "name": "Animals",
       "title": "Animal Item 19",
       "price": "Rs 11511",
@@ -1411,7 +1411,7 @@ const listings = {
       "href": "/category/animals"
     },
     {
-            "id": "animals-20",
+      "id": "animals-20",
       "name": "Animals",
       "title": "Animal Item 20",
       "price": "Rs 8803",
@@ -1423,4 +1423,4 @@ const listings = {
   ]
 };
 
-module.exports=listings;
+module.exports = listings;

@@ -30,7 +30,18 @@ export function AuthProvider({ children }) {
         setAccessToken(null);
         setUser(null);
     };
-    const value = { login, logout, signup, fetchProfile, user };
+    const likeProduct = async (productId) => {
+        const { data } = await api.post(`/products/${productId}/like`);
+        setUser(prevUser => {
+            if (!prevUser) return null;
+            return {
+                ...prevUser,
+                likedProducts: data.likedProducts
+            };
+        });
+        return data.liked;
+    };
+    const value = { login, logout, signup, fetchProfile, user, likeProduct };
     return <AuthCntx.Provider value={value}>{children}</AuthCntx.Provider>;
 }
 

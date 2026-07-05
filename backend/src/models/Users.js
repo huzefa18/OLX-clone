@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
     tokenVersion: { type: Number, default: 0 },
+    likedProducts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
   },
   { timestamps: true }
 );
