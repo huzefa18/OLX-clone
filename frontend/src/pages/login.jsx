@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import  {useAuth}  from "../auth/AuthContext";
+import { useAuth } from "../auth/AuthContext";
 
 export default function Login() {
-  const { login,user } = useAuth();
+  const { login, user } = useAuth();
   const [form, setForm] = useState({ email: "", password: "" });
   const [err, setErr] = useState("");
-const navigate=useNavigate();
-    useEffect(()=>
-    {
-        if(user)
-        {
-            navigate('/profile')
-        }
-    })
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate('/profile')
+    }
+  }, [user, navigate])
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const onSubmit = async (e) => {

@@ -1,18 +1,16 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 export default function Signup() {
-  const { signup ,user} = useAuth();
+  const { signup, user } = useAuth();
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [err, setErr] = useState("");
-  const navigate=useNavigate();
- useEffect(()=>
-     {
-         if(user)
-         {
-             navigate('/profile')
-         }
-     })
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate('/profile')
+    }
+  }, [user, navigate])
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const onSubmit = async (e) => {
@@ -20,7 +18,7 @@ export default function Signup() {
     setErr("");
     try {
       await signup(form.name, form.email, form.password);
-       navigate('/profile')
+      navigate('/profile')
     } catch (e) {
       setErr(e.response?.data?.msg || "Signup failed");
     }

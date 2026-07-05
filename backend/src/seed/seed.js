@@ -8,15 +8,14 @@ const listings = require('../data/data');
 dotenv.config();
 
 async function seedData() {
-  const idx = await Product.collection.indexes();
-  console.log(JSON.stringify(idx, null, 2));
-  
-  
   try {
-    // await connectDB();
+    await connectDB();
+    const idx = await Product.collection.indexes();
+    console.log(JSON.stringify(idx, null, 2));
+
     await Category.deleteMany();
     await Product.deleteMany();
-      const products={};
+    const products = {};
     for (const [key, items] of Object.entries(listings)) {
       const first = items[0];
       const category = await Category.create({
@@ -24,8 +23,8 @@ async function seedData() {
         img: first.img,
         href: `/category/${key}`,
       });
-        if(!products[key]) products[key]={}
-       products[key] = items.map(item => ({
+      if (!products[key]) products[key] = {}
+      products[key] = items.map(item => ({
         title: item.title,
         price: item.price,
         location: item.location,
@@ -35,8 +34,8 @@ async function seedData() {
         category: category._id,
       }));
 
-      await Product.insertMany(products);
-      console.log(`Inserted ${products.length} products for category "${category.name}"`);
+      await Product.insertMany(products[key]);
+      console.log(`Inserted ${products[key].length} products for category "${category.name}"`);
     }
 
     console.log('Seeding complete!');
