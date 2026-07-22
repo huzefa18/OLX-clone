@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/Users');
+const Product = require('../models/Product');
 const { signAccessToken, signRefreshToken } = require('../utils/tokens');
 
 const refreshCookieToken = {
@@ -119,4 +120,21 @@ exports.profile = async (req, res) => {
 
 exports.logout = async (req, res) => {
   return res.clearCookie('jid', { path: '/api/auth/refresh' }).json({ status: 'success' });
+};
+
+// Public seller profile — no auth required
+exports.publicProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id).select('_id name createdAt');
+    if (!user) return res.status(404).json({ status: 'fail', msg: 'User not found' });
+    const listings = await Product.find({ seller: req.params.id })
+      .populate('category', 'name')
+      .sort('-createdAt');
+    return res.json({
+      status: 'success',
+      data: { ...user.toJSON(), listings },
+    });
+  } catch (err) {
+    return res.status(500).json({ status: 'error', msg: 'Server error' });
+  }
 };

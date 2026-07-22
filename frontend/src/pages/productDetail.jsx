@@ -1,43 +1,47 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { Container, Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import {
+  Container, Row, Col, Card, Button, Spinner, Badge,
+} from "react-bootstrap";
 import api from "../api";
 import { useAuth } from "../auth/AuthContext";
+import ChatBox from "../components/chat/ChatBox";
 import love from "../assets/love.svg";
 
 export default function ProductDetail() {
   const { productId } = useParams();
-  const navigate = useNavigate();
+  const navigate       = useNavigate();
   const { user, likeProduct } = useAuth();
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isLiked, setIsLiked] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
 
+  // ── Load product ─────────────────────────────────────────────────────────
   useEffect(() => {
     async function loadProduct() {
       try {
         const { data } = await api.get(`/products/detail/${productId}`);
         setProduct(data);
-        setLoading(false);
       } catch (err) {
         console.error("Error loading product:", err);
+      } finally {
         setLoading(false);
       }
     }
     loadProduct();
   }, [productId]);
 
+  // ── Sync like state ───────────────────────────────────────────────────────
   useEffect(() => {
-    if (user && user.likedProducts) {
+    if (user?.likedProducts) {
       setIsLiked(user.likedProducts.includes(productId));
     }
   }, [user, productId]);
 
   const handleLike = async () => {
-    if (!user) {
-      navigate("/login");
-      return;
-    }
+    if (!user) { navigate("/login"); return; }
     try {
       const liked = await likeProduct(productId);
       setIsLiked(liked);
@@ -46,9 +50,18 @@ export default function ProductDetail() {
     }
   };
 
+  const handleChat = () => {
+    if (!user) { navigate("/login"); return; }
+    setChatOpen(true);
+  };
+
+  // ── Loading / error states ────────────────────────────────────────────────
   if (loading) {
     return (
-      <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "60vh" }}>
+      <Container
+        className="d-flex justify-content-center align-items-center"
+        style={{ minHeight: "60vh" }}
+      >
         <Spinner animation="border" style={{ color: "#002f34" }} />
       </Container>
     );
@@ -58,67 +71,199 @@ export default function ProductDetail() {
     return (
       <Container className="py-5 text-center">
         <h4>Product not found</h4>
-        <Link to="/" className="btn mt-3" style={{ backgroundColor: "#002f34", color: "#fff" }}>Go Back Home</Link>
+        <Link
+          to="/"
+          className="btn mt-3"
+          style={{ backgroundColor: "#002f34", color: "#fff" }}
+        >
+          Go Back Home
+        </Link>
       </Container>
     );
   }
 
+  const seller      = product.seller;
+  const memberSince = seller?.createdAt
+    ? new Date(seller.createdAt).toLocaleDateString("en-US", { month: "long", year: "numeric" })
+    : "OLX";
+
+  // ── Render ────────────────────────────────────────────────────────────────
   return (
-    <Container className="py-5">
-      <Row className="g-4">
-        <Col md={8}>
-          <Card className="border-0 shadow-sm mb-4">
-            <Card.Img src={product.img} alt={product.title} style={{ height: "450px", objectFit: "contain", backgroundColor: "#f8f9fa", borderRadius: "8px 8px 0 0" }} />
-            <Card.Body className="p-4">
-              <div className="d-flex align-items-center mb-3">
-                <h1 className="mb-0 flex-grow-1" style={{ fontSize: "2rem", fontWeight: "bold" }}>{product.title}</h1>
-                <Button variant="link" className="p-0 border-0" onClick={handleLike}>
-                  <img src={love} alt="like" style={{ height: 32, filter: isLiked ? "invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(94%) contrast(117%)" : "none" }} />
+    <>
+      <Container className="py-5">
+        <Row className="g-4">
+          {/* ── Left: Product image + info ── */}
+          <Col md={8}>
+            <Card className="border-0 shadow-sm mb-4" style={{ borderRadius: 12 }}>
+              <Card.Img
+                src={product.img}
+                alt={product.title}
+                style={{
+                  height: 450,
+                  objectFit: "contain",
+                  backgroundColor: "#f8f9fa",
+                  borderRadius: "12px 12px 0 0",
+                }}
+              />
+              <Card.Body className="p-4">
+                {/* Title + Like */}
+                <div className="d-flex align-items-start mb-3 gap-2">
+                  <h1
+                    className="flex-grow-1 mb-0"
+                    style={{ fontSize: "1.7rem", fontWeight: "bold", color: "#002f34" }}
+                  >
+                    {product.title}
+                  </h1>
+                  <Button
+                    variant="link"
+                    className="p-0 border-0"
+                    onClick={handleLike}
+                    title={isLiked ? "Remove from favorites" : "Add to favorites"}
+                  >
+                    <img
+                      src={love}
+                      alt="like"
+                      style={{
+                        height: 30,
+                        filter: isLiked
+                          ? "invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(94%) contrast(117%)"
+                          : "grayscale(100%) opacity(0.4)",
+                        transition: "filter 0.2s",
+                      }}
+                    />
+                  </Button>
+                </div>
+
+                {/* Price */}
+                <h2 style={{ color: "#002f34", fontWeight: 700 }} className="mb-3">
+                  {product.price}
+                </h2>
+
+                {/* Badges */}
+                <div className="d-flex flex-wrap gap-2 mb-3">
+                  {product.category?.name && (
+                    <Badge
+                      style={{ backgroundColor: "#e8f5f6", color: "#002f34", fontWeight: 500, padding: "6px 12px" }}
+                    >
+                      {product.category.name}
+                    </Badge>
+                  )}
+                  <Badge
+                    style={{ backgroundColor: "#f5f5f5", color: "#555", fontWeight: 500, padding: "6px 12px" }}
+                  >
+                    📍 {product.location}
+                  </Badge>
+                  <Badge
+                    style={{ backgroundColor: "#f5f5f5", color: "#555", fontWeight: 500, padding: "6px 12px" }}
+                  >
+                    🕐 {product.timeAgo}
+                  </Badge>
+                </div>
+
+                <hr />
+
+                {/* Description */}
+                <h5 className="mb-2" style={{ fontWeight: 700 }}>Description</h5>
+                <p className="text-muted" style={{ lineHeight: 1.7 }}>
+                  {product.description && product.description.trim()
+                    ? product.description
+                    : `This is a ${product.title} listed in ${product.location}. 
+                       Contact the seller for more details.`}
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          {/* ── Right: Seller card + actions ── */}
+          <Col md={4}>
+            {/* Seller info */}
+            <Card className="border-0 shadow-sm p-4 mb-3" style={{ borderRadius: 12 }}>
+              <Card.Body className="p-0">
+                <h5 style={{ color: "#002f34", fontWeight: 700 }} className="mb-3">
+                  Seller Details
+                </h5>
+
+                <div className="d-flex align-items-center mb-4 gap-3">
+                  <div
+                    className="rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0"
+                    style={{
+                      width: 52, height: 52,
+                      backgroundColor: "#002f34",
+                      fontWeight: "bold",
+                      fontSize: "1.3rem",
+                    }}
+                  >
+                    {seller?.name?.charAt(0).toUpperCase() ?? "?"}
+                  </div>
+                  <div>
+                    {seller ? (
+                      <Link
+                        to={`/seller/${seller._id}`}
+                        style={{
+                          fontWeight: 700,
+                          color: "#002f34",
+                          textDecoration: "none",
+                          display: "block",
+                          marginBottom: 2,
+                        }}
+                      >
+                        {seller.name} ↗
+                      </Link>
+                    ) : (
+                      <span style={{ fontWeight: 700, color: "#002f34" }}>OLX User</span>
+                    )}
+                    <small className="text-muted">Member since {memberSince}</small>
+                  </div>
+                </div>
+
+                <Button
+                  className="w-100 py-2 mb-2"
+                  style={{
+                    backgroundColor: "#002f34",
+                    border: "none",
+                    fontWeight: 600,
+                    borderRadius: 8,
+                  }}
+                  onClick={handleChat}
+                  disabled={seller && user && seller._id?.toString() === user?.id?.toString()}
+                >
+                  💬 Chat with Seller
                 </Button>
-              </div>
-              <h2 style={{ color: "#002f34", fontWeight: 700 }} className="mb-4">{product.price}</h2>
-              <hr />
-              <h5 className="mb-3">Description</h5>
-              <p className="text-muted" style={{ lineHeight: 1.6 }}>
-                This is a high quality {product.title} located in {product.location}. 
-                It is listed in the category {product.category?.name || "General"}. 
-                Please contact the seller using the details provided on the right.
-              </p>
-            </Card.Body>
-          </Card>
-        </Col>
 
-        <Col md={4}>
-          <Card className="border-0 shadow-sm p-4 mb-4">
-            <Card.Body>
-              <h4 style={{ color: "#002f34", fontWeight: 700 }} className="mb-3">Seller Details</h4>
-              <div className="d-flex align-items-center mb-4">
-                <div className="rounded-circle d-flex align-items-center justify-content-center text-white" style={{ width: 50, height: 50, backgroundColor: "#002f34", fontWeight: "bold", fontSize: "1.2rem" }}>
-                  OLX
-                </div>
-                <div className="ms-3">
-                  <h6 className="mb-0 font-weight-bold">OLX User</h6>
-                  <small className="text-muted">Member since July 2026</small>
-                </div>
-              </div>
-              <Button style={{ backgroundColor: "#002f34", border: "none" }} className="w-100 py-2 font-weight-bold mb-3">
-                Chat with Seller
-              </Button>
-              <Button variant="outline-dark" className="w-100 py-2 font-weight-bold">
-                Show Phone Number
-              </Button>
-            </Card.Body>
-          </Card>
+                <Button
+                  variant="outline-secondary"
+                  className="w-100 py-2"
+                  style={{ fontWeight: 600, borderRadius: 8, borderColor: "#002f34", color: "#002f34" }}
+                  onClick={() => alert("Phone number: +92 300 0000000")}
+                >
+                  📞 Show Phone Number
+                </Button>
+              </Card.Body>
+            </Card>
 
-          <Card className="border-0 shadow-sm p-4 text-center">
-            <Card.Body>
-              <h5 className="mb-2">Posted In</h5>
-              <p className="text-muted mb-1">{product.location}</p>
-              <small className="text-muted">{product.timeAgo}</small>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+            {/* Posted in */}
+            <Card className="border-0 shadow-sm p-4 text-center" style={{ borderRadius: 12 }}>
+              <Card.Body className="p-0">
+                <h6 className="mb-2" style={{ fontWeight: 700, color: "#002f34" }}>
+                  Posted In
+                </h6>
+                <p className="text-muted mb-1">{product.location}</p>
+                <small className="text-muted">{product.timeAgo}</small>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* ── Chat modal ── */}
+      {seller && (
+        <ChatBox
+          show={chatOpen}
+          onHide={() => setChatOpen(false)}
+          product={product}
+          seller={seller}
+        />
+      )}
+    </>
   );
 }

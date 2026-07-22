@@ -99,7 +99,7 @@ function Nav1() {
                 </>
               )}
               <div className="sell-button-wrapper">
-                <button className="sell-button-inner">
+                <button className="sell-button-inner" onClick={() => navigate('/sell')}>
                   <span className="me-1">+</span> SELL
                 </button>
               </div>
